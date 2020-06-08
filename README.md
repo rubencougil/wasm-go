@@ -2,9 +2,9 @@
 
 ![go-build](https://github.com/rubencougil/wasm-go/workflows/go-build/badge.svg)
 
-This is a simple example of a WASM file generated using Go. You can change the following slider to modify a gray scale 
-for this gopher. This image manipulation is not done using JS, is actually performed by a Go program running into your 
-browser.
+This is a simple example of a [WASM](https://webassembly.org/) file generated using Go. You can change the following 
+slider to modify a gray scale for this gopher. This image manipulation is not done using JS, is actually performed by 
+a Go program running into your browser.
 
 ## How to run it
 
