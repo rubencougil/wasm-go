@@ -11,5 +11,8 @@ jobs:
     - name: go version
       run: go version
 
+    - name: ls -l
+      run: ls -l
+
     - name: make start
       run: make start
