@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Go ❤️ Web Assembly</title>
+    <link rel="icon" type="image/png" href="./grid/favicon.ico">
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="grid/simple-grid.min.css">
+    <script src="wasm_exec.js"></script>
+    <script>
+        const go = new Go();
+        WebAssembly.instantiateStreaming(fetch("main.wasm"), go.importObject).then((result) => {
+            go.run(result.instance);
+            var sliderDiv = document.getElementById("myRange");
+            convert(parseFloat(sliderDiv.Value))
+        });
+
+        function updateSlider(slideAmount) {
+            convert(parseFloat("0." + slideAmount));
+        }
+    </script>
+</head>
+<body>
+<a href="https://github.com/rubencougil/wasm-go">
+    <img style="float: left" width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_left_darkblue_121621.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1">
+</a>
+<div class="container">
+    <div class="row" style="margin-top: 20px">
+        <div class="col-4" class="font-regular" style="text-align: center">
+            <h3>Go ❤️ Web Assembly</h3>
+            <p>
+                This is a simple example of a <a href="https://webassembly.org/" target="_blank">WASM</a> file
+                generated using Go. You can change the following slider to modify a gray scale for this gopher.
+                This image manipulation is not done using JS, is actually performed by a Go program running into
+                your browser.
+            </p>
+            <div style="margin-top: 30px">
+                <input onclick="updateSlider(this.value)" type="range" min="1" max="99" value="0" class="slider"
+                       id="myRange">
+            </div>
+        </div>
+        <div class="col-4">
+            <img id="imgOriginal" src="" class="loading"/>
+        </div>
+        <div class="col-4">
+            <img id="img" src="" class="loading"/>
+        </div>
+    </div>
+    <div class="row" style="margin-top:20px">
+        <div class="col-12" style="text-align: right">
+            <p>
+                Created by <a href="http://github.com/rubencougil/wasm-go" target="_blank">Rubén Cougil</a>
+            </p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
