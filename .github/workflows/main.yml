@@ -1,0 +1,15 @@
+name: go-build
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/setup-go@v2
+
+    - name: go version
+      run: go version
+
+    - name: make start
+      run: make start
