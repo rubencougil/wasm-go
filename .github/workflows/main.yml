@@ -6,13 +6,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v1
     - uses: actions/setup-go@v2
 
     - name: go version
       run: go version
-
-    - name: ls -l
-      run: ls -l
 
     - name: make start
       run: make start
