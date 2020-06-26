@@ -6,6 +6,8 @@ This is a simple example of a [WASM](https://webassembly.org/) file generated us
 slider to modify a gray scale for this gopher. This image manipulation is not done using JS, is actually performed by 
 a Go program running into your browser.
 
+Find more in this Medium blog post [here](https://medium.com/@rcougil/web-assembly-go-d01bbfc004cc)
+
 ## How to run it
 
 Execute:
