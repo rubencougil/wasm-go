@@ -8,10 +8,13 @@
     <script src="wasm_exec.js"></script>
     <script>
         const go = new Go();
+        let mod, inst;
         WebAssembly.instantiateStreaming(fetch("main.wasm"), go.importObject).then((result) => {
             go.run(result.instance);
-            var sliderDiv = document.getElementById("myRange");
+            const sliderDiv = document.getElementById("myRange");
             convert(parseFloat(sliderDiv.Value))
+        }).catch((err) => {
+            console.error(err);
         });
 
         function updateSlider(slideAmount) {
