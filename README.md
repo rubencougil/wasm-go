@@ -8,9 +8,9 @@ a Go program running into your browser.
 
 Find more in this Medium blog post [here](https://medium.com/@rcougil/web-assembly-go-d01bbfc004cc)
 
-## Try it
+## 🕹 Try it
 
-🕹 [Play with it live here](https://ruben.cougil.com/wasm-go/html/)
+[Try it here](https://ruben.cougil.com/wasm-go/html/)
 
 ## How to run it (for local development)
 
